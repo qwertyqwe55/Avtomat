@@ -3,30 +3,21 @@
 #include <fstream>
 
 using namespace std;
+
+// { "htm", "html", "class", "js", "css" };
+
 int main()
 {
-	int count[5] = { 0,1,2,3,4};
+	int count[9] = { 0,1,2,3,4,5,6,7,8};
 	string file_name;
 	const int n = 5;
 	int col;
 	int num = 0;
-	string types[n] = { "htm", "html", "class", "js", "css" };
+
 	int i=1;
 	int j = 0;
-	int point = 0;
-	string type;
 	string s;
-	string file = "text.txt";
-	ifstream input(file);
 
-	//if (!input.is_open()) {
-	//	cout << "ERROR" << endl;
-	//}
-	//else {
-	//	while (getline(input, file_name)) {
-	//		cout << file_name << endl;
-	//	}
-	//}
 	cin >> file_name;
 	cin >> col;
 	do {
@@ -36,38 +27,59 @@ int main()
 					 s += file_name[j];
 					 if (file_name[j] == '.') {
 						i = 2;
-						point = j;
 					 }
 				}
 				else {
-					 j = point;
 					 s = "";
 				}
 				break;
 			case 2:
-				 if ('a' < file_name[j] < 'z') {
-					s += file_name[j];
-					type += file_name[j];
-					for (int k = 0; k < n; k++)
-					{
-						if (type == types[k]) {
-							i = 3;
-						}
-					}
-					if (type.length() - 1 > 5) {
-						s = "";
-						type = "";
-						j = point;
-						i = 1;
-					}
-				}
+				 if (file_name[j] == 'h') {
+					 i = 3;
+					 s += file_name[j];
+				 }
+				 else if (file_name[j] == 'c') {
+					 i = 4;
+					 s += file_name[j];
+				 }
+				 else if (file_name[j] == 'j') {
+					 i = 5;
+					 s += file_name[j];
+				 }
 				else {
-					 j = point;
 					 s = "";
 					 i = 1;
 				}
 				break;
 			case 3:
+				if (file_name[j] == 't') {
+					i = 6;
+					s += file_name[j];
+				}
+				else {
+					i = 1;
+					s = "";
+				}
+				break;
+			case 6:
+				if (file_name[j] == 'm') {
+					i = 7;
+					s += file_name[j];
+				}
+				else {
+					s = "";
+					i = 1;
+				}
+				break;
+			case 7:
+				if (file_name[j] == 'l') {
+					i = 8;
+					s += file_name[j];
+				}
+				else {
+					i = 8;
+				}
+			case 8:
 				cout << s << endl;
 				num++;
 				s = "";

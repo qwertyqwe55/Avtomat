@@ -1,4 +1,3 @@
 ﻿  Laba.cpp
-C:\Users\dimag\source\repos\Laba\Laba\Laba.cpp(35,9): warning C4804: <: небезопасное использование типа "bool" в операции
-C:\Users\dimag\source\repos\Laba\Laba\Laba.cpp(48,34): warning C4804: <: небезопасное использование типа "bool" в операции
+C:\Users\dimag\source\repos\Laba\Laba\Laba.cpp(26,9): warning C4804: <: небезопасное использование типа "bool" в операции
   Laba.vcxproj -> C:\Users\dimag\source\repos\Laba\Debug\Laba.exe
